@@ -13,10 +13,10 @@
 **git commit -s**   = pregateste un commit (afiseaza editorul text undde scriu descrierea commit-ului); optiunea *-s* include "semnatura" autorului\
 **git push**    = uploadeaza commit-ul in repo\
 
-Altele:
-**git push -u origin my-branch-name** = creeaza branch-ul my-branch-name (deja existent local) si in repo-ul remote si face push
-**git push -u origin HEAD** = branch-ul pe care ma aflu in prezent; comanda echivalenta cu cea de mai sus
-**git clone** https://github.com/VertUnix/TreasureHunt \  = cloneaza in directorul de lucru un repo remote deja existent
+Altele: \
+**git push -u origin my-branch-name** = creeaza branch-ul my-branch-name (deja existent local) si in repo-ul remote si face push\
+**git push -u origin HEAD** = branch-ul pe care ma aflu in prezent; comanda echivalenta cu cea de mai sus\
+**git clone** https://github.com/VertUnix/TreasureHunt \  = cloneaza in directorul de lucru un repo remote deja existent\
 
 
 #### ====FETCH/ PULL/ MERGE====
