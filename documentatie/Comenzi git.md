@@ -1,5 +1,5 @@
 **git init** \
-**git remote add origin** https://github.com/VertUnix/TreasureHunt \
+**git remote add origin** https://github.com/VertUnix/WeatherApp \
 **git config --global user.email [e_mail]**\
 **git config --global user.name [un_username]**\
 **git checkout -b** [nume_branch]   = creeaza branch nou local\
