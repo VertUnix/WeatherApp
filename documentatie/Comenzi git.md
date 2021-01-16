@@ -16,7 +16,7 @@
 Altele: \
 **git push -u origin my-branch-name** = creeaza branch-ul my-branch-name (deja existent local) si in repo-ul remote si face push\
 **git push -u origin HEAD** = branch-ul pe care ma aflu in prezent; comanda echivalenta cu cea de mai sus\
-**git clone** https://github.com/VertUnix/TreasureHunt \  = cloneaza in directorul de lucru un repo remote deja existent\
+**git clone** https://github.com/VertUnix/TreasureHunt  = cloneaza in directorul de lucru un repo remote deja existent \
 
 
 #### ====FETCH/ PULL/ MERGE====
@@ -29,5 +29,12 @@ GIT FETCH: You can do a git fetch at any time to update your remote-tracking bra
 When you fetch, Git gathers any commits from the target branch that do not exist in your current branch and stores them in your local repository. However, it does not merge them with your current branch.
 
 ![uml_secvential](https://i.stack.imgur.com/XwVzT.png)
+
+
+#### ====GitIgnore====
+
+gitignore.io sau direct din CLI; specific limbajul, OS-ul si IDE-ul:
+
+curl https://www.gitignore.io/api/java,windows,intellij > .gitignore
 
 

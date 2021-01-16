@@ -29,9 +29,10 @@
 
 ## Descriere :page_facing_up:
 
-Pe Insula Piratilor s-a dus zvonul ca este ascunsa o comoara. N Pirati ajung pe insula in speranta ca vor putea ajunge la comoara. Ei stiu unde se afla comoara si triburile de canibali. Scopul acestora este de a afla daca pot ajunge la comoara in siguranta, pe cel mai scurt drum, folosind proviziile pe care le au la dispozitie.
+Proiectul de față este conceput pentru a răspunde cerințelor Temei 2 din cadrul laboratorului de _Software Engineering_.
  
-Proiectul de față este conceput pentru a răspunde cerințelor Temei 1 din cadrul cursului de Inteligență Artificială și va face........
+Folosirea design pattern-ului Model View Controller asigură proprietatea _loosely coupled_ , logica internă a fiecărui element fiind independentă a celorlalte două.
+
 
 ## Instalare :wrench:
 
