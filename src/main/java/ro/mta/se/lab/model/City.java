@@ -7,16 +7,16 @@ package ro.mta.se.lab.model;
  */
 public class City {
 
-    String name;
-    int ID;
-    float lat;
-    float lon;
-    String countryCode;
+    private String name;
+    private int ID;
+    private double lat;
+    private double lon;
+    private String countryCode;
 
     /**
      * Constructorul clasei
      */
-    public City(String name, int ID, float lat, float lon, String countryCode) {
+    public City(int ID, String name, double lat, double lon, String countryCode) {
         this.name = name;
         this.ID = ID;
         this.lat = lat;
@@ -24,40 +24,45 @@ public class City {
         this.countryCode = countryCode;
     }
 
+    public void printCity()
+    {
+        System.out.println(this.ID + " " + name + " " + countryCode);
+    }
+
     public String getName() {
         return name;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public float getLat() {
-        return lat;
-    }
-
-    public float getLon() {
-        return lon;
-    }
-
-    public String getCountryCode() {
-        return countryCode;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
+    public int getID() {
+        return ID;
+    }
+
     public void setID(int ID) {
         this.ID = ID;
     }
 
-    public void setLat(float lat) {
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
         this.lat = lat;
     }
 
-    public void setLon(float lon) {
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
         this.lon = lon;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
     }
 
     public void setCountryCode(String countryCode) {
