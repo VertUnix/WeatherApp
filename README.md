@@ -33,20 +33,21 @@ Proiectul de față este conceput pentru a răspunde cerințelor Temei 2 din cad
  
 Folosirea design pattern-ului Model View Controller asigură proprietatea _loosely coupled_ , logica internă a fiecărui element fiind independentă de a celorlalte două.
 
-![WeatherApp](/uml_and_tests/WeatherApp?raw=true)
+![WeatherApp](/uml_and_tests/WeatherApp.jpg?raw=true)
 
 
 ## Dependințe :wrench:
 
-[JSON In Java][https://mvnrepository.com/artifact/org.json/json]
-[JUnit][https://junit.org/junit5/]
-[JavaFX][https://openjfx.io/]
+- [JSON In Java](https://mvnrepository.com/artifact/org.json/json)
+- [JUnit](https://junit.org/junit5/)
+- [JavaFX](https://openjfx.io/)
 
 ## Utilizare :satellite:
 
 Programul încarcă o listă de orașe cu ID-urile specifice API-ului OpenWeather:
 
-```ID		nm		lat		lon		countryCode
+```
+ID		nm		lat		lon		countryCode
 819827	        Razvilka	55.591667       37.740833	RU
 524901	        Moscow	        55.752220       37.615555	RU
 2973393	        Tarascon	43.805828       4.660280	FR
@@ -56,7 +57,7 @@ Programul încarcă o listă de orașe cu ID-urile specifice API-ului OpenWeathe
 Utilizatorul selectează codul unei țări, un oraș din lisă și afișează informațiile meteo prin apăsarea butonului.
 
 
-### Alte tehnologii/ resurse :books:
+## Alte tehnologii/ resurse :books:
 
 - IntelliJ
 - Maven
@@ -64,8 +65,8 @@ Utilizatorul selectează codul unei țări, un oraș din lisă și afișează in
 - PlantUML
 - Draw.io
  
-### Autor
+## Autor
 VertUnix
 
-### Licență
+## Licență
 [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html)
