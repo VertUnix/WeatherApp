@@ -29,6 +29,23 @@ public class Country {
             cities.add(cityToAdd);
     }
 
+    /**
+     * Functia cauta un oras dupa nume in lista
+     * ce orase si, daca orasul cautat exista,
+     * va returna ID-ul sau.
+     * @param cityToSearch numele unui oras
+     * @return String ce reprezinta ID-ul orasului cautat
+     */
+    public int getCityIDByName(String cityToSearch)
+    {
+        for(City city : cities){
+            if(city.name == cityToSearch){
+                return city.ID;
+            }
+        }
+        return -1;
+    }
+
     public void printCityList() {
         System.out.println(countryCode + ": ");
         for(City city : cities)
@@ -42,4 +59,6 @@ public class Country {
     public ArrayList<City> getCities() {
         return cities;
     }
+
+
 }

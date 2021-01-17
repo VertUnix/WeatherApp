@@ -6,50 +6,131 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="420.0" prefWidth="630" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="420.0" prefWidth="630" spacing="0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <SplitPane dividerPositions="0.29797979797979796" prefHeight="422.0" prefWidth="590.0">
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="420.0" prefWidth="630.0" style="-fx-background-color: white;">
         <items>
           <AnchorPane fx:id="leftPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="primaryButton" layoutX="39.0" layoutY="239.0" onAction="#displayWeather" prefHeight="38.0" prefWidth="103.0" text="Display Weather" />
-                  <ComboBox fx:id="countryCombo" layoutX="11.0" layoutY="71.0" prefWidth="150.0" />
-                  <ComboBox fx:id="cityCombo" layoutX="11.0" layoutY="151.0" prefWidth="150.0" />
-                  <Label layoutX="51.0" layoutY="37.0" text="Country">
+                  <Button fx:id="displayButton" layoutX="40.0" layoutY="241.0" onAction="#displayWeather" prefHeight="38.0" prefWidth="103.0" text="Display Weather" />
+                  <ComboBox fx:id="countryCombo" layoutX="17.0" layoutY="67.0" prefWidth="150.0" promptText="(select country)" />
+                  <ComboBox fx:id="cityCombo" layoutX="17.0" layoutY="158.0" prefWidth="150.0" promptText="(select city)" />
+                  <Label layoutX="57.0" layoutY="36.0" text="Country">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="69.0" layoutY="116.0" text="City">
+                  <Label layoutX="75.0" layoutY="127.0" text="City">
                      <font>
                         <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="400.0" text="by VertUnix ©2021">
+                     <font>
+                        <Font size="9.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane fx:id="rightAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Label fx:id="temp" layoutX="174.0" layoutY="53.0" prefHeight="90.0" prefWidth="70.0" text="15">
+                  <Label fx:id="temp" layoutX="167.0" layoutY="62.0" prefHeight="117.0" prefWidth="129.0" text="15" textAlignment="RIGHT">
                      <font>
-                        <Font size="61.0" />
+                        <Font size="86.0" />
                      </font></Label>
-                  <Label layoutX="188.0" layoutY="26.0" text="City" textAlignment="CENTER">
+                  <Label fx:id="cityNameLabel" layoutX="169.0" layoutY="21.0" text="City" textAlignment="CENTER">
                      <font>
-                        <Font size="25.0" />
+                        <Font size="31.0" />
                      </font>
                   </Label>
-                  <Label layoutX="246.0" layoutY="66.0" prefHeight="30.0" prefWidth="27.0" text="°C">
+                  <Label fx:id="degreeCelsius" layoutX="293.0" layoutY="84.0" prefHeight="30.0" prefWidth="27.0" text="°C">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="54.0" fitWidth="57.0" layoutX="110.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="icon" fitHeight="126.0" fitWidth="130.0" layoutX="43.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="description" layoutX="65.0" layoutY="163.0" text="clear sky" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="332.0" layoutY="121.0" text="Min" textFill="#3411e2" />
+                  <Label layoutX="332.0" layoutY="145.0" text="Max" textFill="#b70f0f" />
+                  <Label fx:id="degreeCelsius1" layoutX="382.0" layoutY="116.0" prefHeight="26.0" prefWidth="13.0" text="°C">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="degreeCelsius11" layoutX="382.0" layoutY="141.0" prefHeight="26.0" prefWidth="13.0" text="°C">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="minTemp" layoutX="360.0" layoutY="121.0" text="-18" />
+                  <Label fx:id="maxTemp" layoutX="360.0" layoutY="145.0" text="-18" />
+                  <Label layoutX="139.0" layoutY="247.0" text="Pressure">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="141.0" layoutY="293.0" text="Humidity">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="232.0" layoutY="171.0" text="Feels Like" />
+                  <Label fx:id="feelsLike" layoutX="241.0" layoutY="191.0" text="-15" />
+                  <Label fx:id="degreeCelsius12" layoutX="262.0" layoutY="185.0" prefHeight="26.0" prefWidth="13.0" text="°C">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="141.0" layoutY="341.0" text="Wind">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="degreeCelsius111" layoutX="276.0" layoutY="246.0" prefHeight="26.0" prefWidth="22.0" text="mb">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="degreeCelsius1111" layoutX="276.0" layoutY="291.0" prefHeight="26.0" prefWidth="22.0" text="\%">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="degreeCelsius11111" layoutX="277.0" layoutY="340.0" prefHeight="26.0" prefWidth="38.0" text="km/h">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pressure" layoutX="228.0" layoutY="245.0" text="1030">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="humidity" layoutX="237.0" layoutY="290.0" text="100">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="windSpeed" layoutX="245.0" layoutY="339.0" text="80">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="307.0" layoutY="400.0" text="powered by OpenWeatherMap">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
    </children>
    <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      <Insets bottom="0" left="0" right="0" top="0" />
    </padding>
 </VBox>

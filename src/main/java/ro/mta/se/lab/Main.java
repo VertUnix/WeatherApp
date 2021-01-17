@@ -10,6 +10,7 @@ import ro.mta.se.lab.model.Places;
 import ro.mta.se.lab.model.WeatherAPI;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -25,6 +26,7 @@ public class Main extends Application {
         try {
             scene = new Scene(loadFXML("primary"));
             stage.setScene(scene);
+            stage.setTitle("WeatherApp");
             stage.show();
         }
         catch (Exception e) {
@@ -47,23 +49,11 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         try {
-            /*City oras1 = new City("Viena", 5, 1.2, 5.532, "AU");
-            City oras2 = new City("Salzburg", 5, 1.2, 5.532, "AU");
-            Country tara = new Country("AU");
-            tara.addCity(oras1);
-            tara.addCity(oras2);
-
-            tara.printCityList();*/
 
             places = new Places("src/main/java/ro/mta/se/lab/resources/places.txt");
             places.modelInit();
-            places.printPlaces();
 
 
-            //Controller controller = new Controller(places);
-
-            WeatherAPI api = new WeatherAPI();
-            api.getWeatherInfo("2973393");
             launch();
         }
         catch (Exception e){

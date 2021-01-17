@@ -11,10 +11,6 @@
 <p align="center">
 	<strong>
 		<a href="https://wiki.mta.ro/c/4/ip/lab/tema2-2020">Wiki Requirements</a>
-		•
-		<a href="https://docs.google.com/document/d/11szgR8-hIbZpbWlpFhaholPJg9oxO2bLi_jbBeudsNo/edit">---</a>
-		•
-		<a href="https://google.com">---</a>
 	</strong>
 </p>
 <p align="center">
@@ -24,6 +20,10 @@
 	<a href="https://github.com/VertUnix/WeatherApp"><img
 		alt="Progress status"
 		src="https://img.shields.io/badge/Progress-under%20construction-yellow"></a>
+	<a href="https://github.com/VertUnix/WeatherApp"><img
+		alt="Progress status"
+		src="https://img.shields.io/badge/by-VertUnix-informational"></a>
+
 </p>
 
 
@@ -31,62 +31,41 @@
 
 Proiectul de față este conceput pentru a răspunde cerințelor Temei 2 din cadrul laboratorului de _Software Engineering_.
  
-Folosirea design pattern-ului Model View Controller asigură proprietatea _loosely coupled_ , logica internă a fiecărui element fiind independentă a celorlalte două.
+Folosirea design pattern-ului Model View Controller asigură proprietatea _loosely coupled_ , logica internă a fiecărui element fiind independentă de a celorlalte două.
+
+![WeatherApp](/uml_and_tests/WeatherApp?raw=true)
 
 
-## Instalare :wrench:
+## Dependințe :wrench:
 
-**Linux** Folosind managerul de pachete apt-get \
-**Windows** Folosind installer-ul 
-
-```bash
-sudo apt-get install web-crawler
-```
+[JSON In Java][https://mvnrepository.com/artifact/org.json/json]
+[JUnit][https://junit.org/junit5/]
+[JavaFX][https://openjfx.io/]
 
 ## Utilizare :satellite:
 
-Fișier de configurare (*config.conf*):
+Programul încarcă o listă de orașe cu ID-urile specifice API-ului OpenWeather:
 
-```text
-n_threads=50
-delay=100ms
-root_dir=D:/Download
-log_level=3
-depth_level=3
-max_size=500kB
-files_type=all/png/jpg/js/php
+```ID		nm		lat		lon		countryCode
+819827	        Razvilka	55.591667       37.740833	RU
+524901	        Moscow	        55.752220       37.615555	RU
+2973393	        Tarascon	43.805828       4.660280	FR
+2986678	        Ploufragan	48.491409       -2.794580	FR
 ```
 
-Exemplu metodă Java:
+Utilizatorul selectează codul unei țări, un oraș din lisă și afișează informațiile meteo prin apăsarea butonului.
 
-```java
 
-public Crawl(String sitesFilename, Configuration config) throws FileNotFoundException {
-        this._sitesFilename = sitesFilename;
-        this._config = config;
-    }
-```
+### Alte tehnologii/ resurse :books:
 
-Exemplu cod Powershell:
-```powershell
-Copy-Item "C:\Logfiles" -Destination "C:\Drawings\Logs" -Recurse
+- IntelliJ
+- Maven
+- OpenWeatherMap
+- PlantUML
+- Draw.io
+ 
+### Autor
+VertUnix
 
-crawler crawl config.conf sites.txt
-
-crawler sitemap D:/Download/numesite1.ro
-```
-
-## Resurse :books:
-
-- [Lots of readme.md examples][1]
-- [Yet another example][2]
-- [Emojis][3]
-- ["Shields" badges][4]
-
-[1]: https://github.com/matiassingers/awesome-readme
-[2]: https://www.makeareadme.com/
-[3]: https://gist.github.com/rxaviers/7360908
-[4]: https://shields.io/
-
-## License
+### Licență
 [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html)

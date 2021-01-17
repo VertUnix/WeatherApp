@@ -4,6 +4,9 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import javafx.scene.image.Image;
 import org.json.*;
@@ -83,13 +86,13 @@ public class WeatherAPI {
 
         // temperatura=jsonObject.getJSONObject("main").getString("temp");
         info.cityName = jsonObject.getString("name");
-        info.temperature = (int) Math.round(jsonObject.getJSONObject("main").getDouble("temp"));
-        info.feelsLike = (int) Math.round(jsonObject.getJSONObject("main").getDouble("feels_like"));
-        info.tempMin = (int) Math.round(jsonObject.getJSONObject("main").getDouble("temp_min"));
-        info.tempMax = (int) Math.round(jsonObject.getJSONObject("main").getDouble("temp_max"));
-        info.pressure = (int) Math.round(jsonObject.getJSONObject("main").getDouble("pressure"));
-        info.humidity = (int) Math.round(jsonObject.getJSONObject("main").getDouble("humidity"));
-        info.windSpeed = (int) Math.round(jsonObject.getJSONObject("wind").getDouble("speed"));
+        info.temperature = String.valueOf(Math.round(jsonObject.getJSONObject("main").getDouble("temp")));
+        info.feelsLike = String.valueOf(Math.round(jsonObject.getJSONObject("main").getDouble("feels_like")));
+        info.tempMin = String.valueOf(Math.round(jsonObject.getJSONObject("main").getDouble("temp_min")));
+        info.tempMax = String.valueOf(Math.round(jsonObject.getJSONObject("main").getDouble("temp_max")));
+        info.pressure = String.valueOf(Math.round(jsonObject.getJSONObject("main").getDouble("pressure")));
+        info.humidity = String.valueOf(Math.round(jsonObject.getJSONObject("main").getDouble("humidity")));
+        info.windSpeed = String.valueOf(Math.round(jsonObject.getJSONObject("wind").getDouble("speed")));
         info.description = jsonObject.getJSONArray("weather").getJSONObject(0).getString("description");
         info.iconCode = jsonObject.getJSONArray("weather").getJSONObject(0).getString("icon");
         //System.out.println(info.feelsLike);
@@ -104,15 +107,26 @@ public class WeatherAPI {
      */
     private void fetchIcon(WeatherInfo info) throws IOException {
         String iconCode = info.iconCode;
-        URL imageURL = new URL("http://openweathermap.org/img/wn/" + iconCode + "@2x.png");
+
+        /*URL imageURL = new URL("http://openweathermap.org/img/wn/" + iconCode + "@2x.png");
 
         InputStream in = new BufferedInputStream(imageURL.openStream());
-        OutputStream out = new BufferedOutputStream(new FileOutputStream("src/main/java/ro/mta/se/lab/resources/" + iconCode + ".png"));
+        //OutputStream out = new BufferedOutputStream(new FileOutputStream("src/main/java/ro/mta/se/lab/resources/" + iconCode + ".png"));
 
-        for (int i; (i = in.read()) != -1; ) {
+        *//*for (int i; (i = in.read()) != -1; ) {
             out.write(i);
+        }*/
+
+
+        try(InputStream inStream = new URL("http://openweathermap.org/img/wn/" + iconCode + "@2x.png").openStream()) {
+            Files.copy(inStream, Paths.get("src/main/java/ro/mta/se/lab/resources/" + iconCode + ".png"));
+        }
+        catch (FileAlreadyExistsException e)
+        {
+            ;
         }
 
+        //System.out.println("file:" + "src/main/java/ro/mta/se/lab/resources/" + iconCode + ".png");
         //System.out.println("http://openweathermap.org/img/wn/" + iconCode + "@2x.png");
         info.image = new Image("file:" + "src/main/java/ro/mta/se/lab/resources/" + iconCode + ".png");
     }

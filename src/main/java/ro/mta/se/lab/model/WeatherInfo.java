@@ -10,13 +10,13 @@ import javafx.scene.image.Image;
 public class WeatherInfo {
 
     protected String cityName;
-    protected int temperature;
-    protected int feelsLike;
-    protected int tempMin;
-    protected int tempMax;
-    protected int pressure;
-    protected int humidity;
-    protected int windSpeed;
+    protected String temperature;
+    protected String feelsLike;
+    protected String tempMin;
+    protected String tempMax;
+    protected String pressure;
+    protected String humidity;
+    protected String windSpeed;
     protected String description;
     protected String iconCode;
     protected Image image;
@@ -33,31 +33,31 @@ public class WeatherInfo {
         return cityName;
     }
 
-    public int getTemperature() {
+    public String getTemperature() {
         return temperature;
     }
 
-    public int getFeelsLike() {
+    public String getFeelsLike() {
         return feelsLike;
     }
 
-    public int getTempMin() {
+    public String getTempMin() {
         return tempMin;
     }
 
-    public int getTempMax() {
+    public String getTempMax() {
         return tempMax;
     }
 
-    public int getPressure() {
+    public String getPressure() {
         return pressure;
     }
 
-    public int getHumidity() {
+    public String getHumidity() {
         return humidity;
     }
 
-    public int getWindSpeed() {
+    public String getWindSpeed() {
         return windSpeed;
     }
 

@@ -1,0 +1,187 @@
+@startuml
+
+title __WEATHERAPP2's Class Diagram__\n
+
+  namespace java {
+    namespace o.mta.se.lab {
+      class ro.mta.se.lab.Main {
+                {static} + places : Places
+                {static} - scene : Scene
+                {static} + main()
+                {static} + setRoot()
+                + start()
+                {static} - loadFXML()
+            }
+    }
+  }
+  
+
+  namespace java {
+    namespace o.mta.se.lab {
+      namespace controller {
+              class ro.mta.se.lab.controller.Controller {
+                  ~ selectedCityID : int
+                  - cityCombo : ComboBox<String>
+                  - cityNameLabel : Label
+                  - countryCombo : ComboBox<String>
+                  - degreeCelsius : Label
+                  - description : Label
+                  - displayButton : Button
+                  - feelsLike : Label
+                  - humidity : Label
+                  - icon : ImageView
+                  - leftPane : AnchorPane
+                  - maxTemp : Label
+                  - minTemp : Label
+                  - pressure : Label
+                  - rightAnchorPane : AnchorPane
+                  - temp : Label
+                  - windSpeed : Label
+                  + Controller()
+                  + handleCityCombo()
+                  + handleCountryCombo()
+                  + initialize()
+                  - displayWeather()
+              }
+            }
+    }
+  }
+  
+
+  namespace java {
+    namespace o.mta.se.lab {
+      namespace model {
+              class ro.mta.se.lab.model.City {
+                  # ID : int
+                  # countryCode : String
+                  # lat : double
+                  # lon : double
+                  # name : String
+                  + City()
+                  + getCountryCode()
+                  + getID()
+                  + getLat()
+                  + getLon()
+                  + getName()
+                  + printCity()
+                  + setCountryCode()
+                  + setID()
+                  + setLat()
+                  + setLon()
+                  + setName()
+              }
+              class ro.mta.se.lab.model.Country {
+                          ~ cities : ArrayList<City>
+                          ~ countryCode : String
+                          + Country()
+                          + addCity()
+                          + getCities()
+                          + getCityIDByName()
+                          + getCountryCode()
+                          + printCityList()
+                      }
+              class ro.mta.se.lab.model.Places {
+                          - countryList : ArrayList<Country>
+                          - inputFileName : String
+                          + Places()
+                          + getCountryList()
+                          + modelInit()
+                          + printPlaces()
+                          - addCity()
+              }
+              class ro.mta.se.lab.model.WeatherInfo {
+                                        # cityName : String
+                                        # description : String
+                                        # feelsLike : String
+                                        # humidity : String
+                                        # iconCode : String
+                                        # image : Image
+                                        # pressure : String
+                                        # tempMax : String
+                                        # tempMin : String
+                                        # temperature : String
+                                        # windSpeed : String
+                                        + WeatherInfo()
+                                        + getCityName()
+                                        + getDescription()
+                                        + getFeelsLike()
+                                        + getHumidity()
+                                        + getIconCode()
+                                        + getImage()
+                                        + getPressure()
+                                        + getTempMax()
+                                        + getTempMin()
+                                        + getTemperature()
+                                        + getWindSpeed()
+                                    }
+              class ro.mta.se.lab.model.WeatherAPI {
+                          - APIKey : String
+                          - APIURL : String
+                          - jsonResponse : String
+                          + WeatherAPI()
+                          + getWeatherInfo()
+                          - fetchIcon()
+                          - parseJSON()
+                          - queryWeatherServer()
+              }
+
+
+            }
+
+    }
+  }
+  
+
+  namespace java {
+    namespace o.mta.se.lab {
+      namespace model {
+        class ro.mta.se.lab.model.Country {
+        }
+      }
+    }
+  }
+  
+
+  namespace java {
+    namespace o.mta.se.lab {
+      namespace model {
+        class ro.mta.se.lab.model.Places {
+        }
+      }
+    }
+  }
+  
+
+  namespace java {
+    namespace o.mta.se.lab {
+      namespace model {
+        class ro.mta.se.lab.model.WeatherAPI {
+        }
+      }
+    }
+  }
+  
+
+  namespace java {
+    namespace o.mta.se.lab {
+      namespace model {
+        class ro.mta.se.lab.model.WeatherInfo {
+        }
+      }
+    }
+  }
+  
+
+  ro.mta.se.lab.Main -up-|> javafx.application.Application
+  ro.mta.se.lab.controller.Controller o-- ro.mta.se.lab.model.Places : places
+  ro.mta.se.lab.controller.Controller o-- ro.mta.se.lab.model.Country : selectedCountry
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

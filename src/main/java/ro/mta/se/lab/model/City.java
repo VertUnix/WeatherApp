@@ -7,11 +7,11 @@ package ro.mta.se.lab.model;
  */
 public class City {
 
-    private String name;
-    private int ID;
-    private double lat;
-    private double lon;
-    private String countryCode;
+    protected String name;
+    protected int ID;
+    protected double lat;
+    protected double lon;
+    protected String countryCode;
 
     /**
      * Constructorul clasei
