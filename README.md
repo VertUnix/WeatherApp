@@ -33,7 +33,10 @@ Proiectul de față este conceput pentru a răspunde cerințelor Temei 2 din cad
  
 Folosirea design pattern-ului Model View Controller asigură proprietatea _loosely coupled_ , logica internă a fiecărui element fiind independentă de a celorlalte două.
 
-![WeatherApp](/uml_and_tests/WeatherApp.jpg?raw=true)
+<p align="center">
+  <img height="300" src="https://i.imgur.com/TWMITHO.jpg">
+</p>
+
 
 
 ## Dependințe :wrench:
@@ -67,6 +70,3 @@ Utilizatorul selectează codul unei țări, un oraș din lisă și afișează in
  
 ## Autor
 VertUnix
-
-## Licență
-[GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html)
